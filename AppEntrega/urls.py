@@ -19,7 +19,7 @@ urlpatterns = [
     path('eliminarProfesor/<profesor_nombre>/',eliminarProfesor, name='EliminarProfesor'),
     path('editarProfesor/<profesor_nombre>/',editarProfesor, name='EditarProfesor'),
     path('agregarComentario/',comentarCursos,name= 'comentarCurso'),
-    path('leerBlog/',leerBlogs,name='leerBlogs'),
+    path('leerBlogs/',leerBlogs,name='leerBlogs'),
     path('eliminarBlogs/<blog_titulo>/',eliminarComentario, name='EliminarBlogs'),
     path('editarBlogs/<blog_titulo>/',editarComentario, name='EditarBlogs'),
 

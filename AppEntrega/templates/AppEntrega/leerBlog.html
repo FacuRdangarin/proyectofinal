@@ -5,12 +5,19 @@
 <title>Document</title>
 </head>
 <body>
-     {% for b in Blog %}
-     <li>{{b}}</li>
-     <button>
-        <a href="{% url 'EliminarBlogs' p.nombre %}"> Eliminar</a>
-        <a href="{% url 'EditarBlogs' p.nombre %}"> Editar</a>
-    </button>
+    {% for b in blogs %}
+        <p>Titulo: {{ b.titulo }}</p>
+        <p>SubTitulo: {{ b.subTitulo }}</p>
+        <p>Autor: {{ b.autor }}</p>
+        <p>Fecha de Publicación: {{ b.fecha }}</p>
+        <p>Cuerpo: {{ b.cuerpo }}</p>
+        <img src="{% static 'AppEntrega/assets/img'%}" alt="imagen">
+     
+
+        <button>
+    <a href="{% url 'EliminarBlogs' b.titulo %}"> Eliminar</a>
+    <a href="{% url 'EditarBlogs' b.titulo %}"> Editar</a>
+</button>
     {% endfor %}
 </body>
 

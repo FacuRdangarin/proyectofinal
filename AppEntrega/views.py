@@ -7,9 +7,9 @@ from django.contrib.auth.decorators import login_required
 from datetime import datetime
 from django.urls import reverse_lazy
 from django.contrib.auth.views import LoginView, PasswordChangeView
+from django.http import HttpResponse
 
 
-from django.http import HttpResponse 
 
 @login_required
 def inicio(request):
@@ -29,7 +29,6 @@ def estudiantes(request):
 @login_required
 def entregables(request):
     return render(request,"AppEntrega/entregables.html")
-@login_required
 def nosotros(request):
     return render(request,"AppEntrega/nosotros.html")
 
@@ -182,24 +181,24 @@ def comentarCursos(request):
     
     if request.method == "POST":
  
-        miForm = ComentariosForm(request.POST)
+        miForm = comentariosForm(request.POST)
         print(miForm)
  
         if miForm.is_valid():
             informacion = miForm.cleaned_data
             blog = Blog(titulo=informacion['titulo'], subTitulo=informacion['subTitulo'],cuerpo=informacion['cuerpo'],autor=informacion['autor'],fecha=informacion['fecha'],foto=informacion['foto'])
             blog.save()
-            return HttpResponse,render(request,"AppEntrega/index.html")
+            return render(request,"AppEntrega/index.html")
     else:
-        miForm = ComentariosForm()
+        miForm = comentariosForm()
  
-        return HttpResponse,render(request, "AppEntrega/comentarCurso.html", {"miForm": miForm})
+        return render(request,"AppEntrega/comentarCurso.html", {"miForm": miForm})
 
 def leerBlogs(request):
 
-      blog = Blog.objects.all() 
+      blogs = Blog.objects.all() 
 
-      contexto= {"blog":blog} 
+      contexto= {"blogs":blogs} 
 
       return render(request, "AppEntrega/leerBlog.html",contexto)
   
@@ -207,16 +206,16 @@ def eliminarComentario(request,blog_titulo):
     blog= Blog.objects.get(titulo=blog_titulo)
     blog.delete()
 # vuelvo al menú
-    blog = Blog.objects.all() 
-    contexto = {"blog": blog}
+    blogs = Blog.objects.all() 
+    contexto = {"blogs": blogs}
     return render(request, "AppEntrega/leerBlogs.html", contexto)
 
 def editarComentario(request,blog_titulo):
-     blog = Blog.objects.get(titulo= blog_titulo)
+     blog = Blog.objects.get(titulo = blog_titulo)
      
      if request.method == "POST":
  
-        miForm = ComentariosForm(request.POST)
+        miForm = comentariosForm(request.POST)
         print(miForm)
  
         if miForm.is_valid():
@@ -228,11 +227,11 @@ def editarComentario(request,blog_titulo):
             blog.fecha= informacion ['fecha']
             blog.foto= informacion ['foto']
             blog.save()
-            return HttpResponse,render(request, "AppEntrega/index.html")
+            return render(request, "AppEntrega/index.html")
      else:
-        miForm = ComentariosForm(initial={'titulo':blog.titulo, 'subTitulo':blog.subTitulo,'cuerpo':blog.cuerpo,'autor':blog.autor,'fecha':blog.fecha,'foto':blog.foto})
+        miForm = comentariosForm(initial={'titulo':blog.titulo, 'subTitulo':blog.subTitulo,'cuerpo':blog.cuerpo,'autor':blog.autor,'fecha':blog.fecha,'foto':blog.foto})
  
-        return HttpResponse,render(request, "AppEntrega/editarBlogs.html", {"miForm": miForm,"blog_titulo":blog_titulo})
+        return render(request, "AppEntrega/editarBlogs.html", {"miForm": miForm,"blog_titulo":blog_titulo})
 
 
 

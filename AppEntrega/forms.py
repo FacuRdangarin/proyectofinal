@@ -35,7 +35,7 @@ class UserRegisterForm(UserCreationForm):
         # Saca los mensajes de ayuda
         help_texts = {k:"" for k in fields}
 
-class ComentariosForm(forms.Form):
+class comentariosForm(forms.Form):
     titulo = forms.CharField(max_length=15)
     subTitulo = forms.CharField(max_length=30)
     cuerpo = forms.CharField(max_length=300)
