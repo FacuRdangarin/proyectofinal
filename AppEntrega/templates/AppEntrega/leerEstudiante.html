@@ -1,0 +1,13 @@
+{% extends "AppEntrega/padre.html" %}
+{% load static %}
+
+{% block section1 %}
+    <title>Document</title>
+</head>
+<body>
+    {% for e in estudiantes %}
+        <li>{{e}}</li>
+    {% endfor %}
+</body>
+
+{% endblock %}

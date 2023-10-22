@@ -1,0 +1,71 @@
+{% extends "AppEntrega/padre.html" %}
+{% load static %}
+
+{% block section1 %}
+ <!-- Content section 1-->
+ <section id="scroll">
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6 order-lg-2">
+                <div class="p-5"><img class="img-fluid rounded-circle" src="{% static 'AppEntrega/assets/img/04.png'%}" alt="..." /></div>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <div class="p-5">
+                    <h2 class="display-4">Front-End</h2>
+                    <p>El frontend o «desarrollo del lado del cliente» se refiere a la práctica de producir HTML, CSS y JavaScript. Estos tres elementos se encargan de dar forma a la parte frontal de un sitio web o aplicación. Esto incluye los fondos, colores, texto, animaciones o efectos.</p>
+                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'leerBlogs' %}">ver comentarios</a>
+                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'comentarCurso' %}">dejanos tu experiencia</a>
+                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'readComun' %}">disponibles</a>
+                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'Buscar' %}">buscar</a>
+                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'cursoForm' %}">inscribir</a>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Content section 2-->
+<section>
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6">
+                <div class="p-5"><img class="img-fluid rounded-circle" src="{% static 'AppEntrega/assets/img/05.png'%}" alt="..." /></div>
+            </div>
+            <div class="col-lg-6">
+                <div class="p-5">
+                    <h2 class="display-4">back-end</h2>
+                    <p>Un backend es un sistema corporativo que se utiliza para dirigir una web o empresa, tales como sistemas de gestión de pedidos, inventario y procesamiento de suministro. Este sistema recoge información de los usuarios u otros sistemas de tratamiento de datos en la compañía.</p>
+                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'leerBlogs' %}">ver comentarios</a>
+                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'comentarCurso' %}">dejanos tu experiencia</a>
+                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'readComun' %}">disponibles</a>
+                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'Buscar' %}">buscar</a>
+                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'cursoForm' %}">inscribir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Content section 3-->
+<section>
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6 order-lg-2">
+                <div class="p-5"><img class="img-fluid rounded-circle" src="{%static 'AppEntrega/assets/img/06.jpg'%}" alt="..." /></div>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <div class="p-5">
+                    <h2 class="display-4">data-base</h2>
+                    <p>se encarga no solo de almacenar datos, sino también de conectarlos entre sí en una unidad lógica.</p>
+                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'leerBlogs' %}">ver comentarios</a>
+                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'comentarCurso' %}">contanos tu experiencia</a>
+                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'readComun' %}">disponibles</a>
+                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'Buscar' %}">buscar</a>
+                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'cursoForm' %}">inscribir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

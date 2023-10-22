@@ -1,0 +1,16 @@
+{% extends "AppEntrega/curso.html" %}
+
+{% load static %}
+
+{% block section1 %}
+<ul>
+{% title %} Cursos {% endblock title %}
+
+{% for curso in cursos %}
+
+<li>{{curso.curso}}</li>
+
+
+{% endfor %}
+</ul>
+{% endblock %}

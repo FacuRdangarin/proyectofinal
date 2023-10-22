@@ -1,0 +1,22 @@
+{% extends "AppEntrega/padre.html" %}
+{% load static %}
+
+{% block section1 %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Inciar sesion</button> <div class="text-center">
+    <li>aun no estas registrado?...Hacelo</li>
+    <button class="nav-item"><a class="nav-link" href="{% url 'registrarse' %}">registrarse</a></button>
+</div>
+</html>
+{% endblock %}

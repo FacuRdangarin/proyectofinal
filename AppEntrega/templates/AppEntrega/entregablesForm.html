@@ -1,0 +1,20 @@
+{% extends "AppEntrega/entregables.html" %}
+
+{% load static %}
+
+{% block section1 %}
+<form action="" method="POST">
+    {% csrf_token %}
+    
+    <table>
+        
+        
+        {{miForm.as_table}}
+    
+    
+    </table>
+
+    <input type="Submit" value="Enviar">
+</form>
+
+{% endblock %}

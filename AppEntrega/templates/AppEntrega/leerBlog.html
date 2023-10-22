@@ -1,0 +1,17 @@
+{% extends "AppEntrega/padre.html" %}
+{% load static %}
+
+{% block section1 %}
+<title>Document</title>
+</head>
+<body>
+     {% for b in Blog %}
+     <li>{{b}}</li>
+     <button>
+        <a href="{% url 'EliminarBlogs' p.nombre %}"> Eliminar</a>
+        <a href="{% url 'EditarBlogs' p.nombre %}"> Editar</a>
+    </button>
+    {% endfor %}
+</body>
+
+{% endblock %}

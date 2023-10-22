@@ -1,0 +1,14 @@
+{% extends "AppEntrega/padre.html" %}
+{% load static %}
+
+{% block section1 %}
+{%block title%} Cursos {% endblock title %}
+{% for curso in cursos %}
+
+
+<li>Curso: {{curso.curso}}--Camada: {{curso.camada}}</li>
+
+
+{% endfor %}
+
+{% endblock %}

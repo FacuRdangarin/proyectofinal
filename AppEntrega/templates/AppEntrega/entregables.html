@@ -1,0 +1,25 @@
+{% extends "AppEntrega/padre.html" %}
+{% load static %}
+
+{% block section1 %}
+
+<section id="scroll">
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6 order-lg-2">
+                <div class="p-5"><img class="img-fluid rounded-circle" src="{% static 'AppEntrega/assets/img/07.jpg'%}" alt="..." /></div>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <div class="p-5">
+                    <h2 class="display-4">Entrega de trabajos</h2>
+                    <p>En esta instancia es todo acorde a cada profesor, Para en si permitir la facilidad del mismo profesor a la hora de las correcciones</p>
+                    <p>Permitiendo y logrando asi un orden fundamental para conllevar esta gran institucion</p>
+                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'entregablesForm' %}">formulario de entrega</a>
+                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'verEntregas' %}">ver entregas</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "AppEntrega/padre.html" %}
+{% load static %}
+
+{% block section1 %}
+        <!-- Content section 3-->
+        <section>
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-6 order-lg-2">
+                        <div class="p-5"><img class="img-fluid rounded-circle" src="{%static 'AppEntrega/assets/img/03.jpg'%}" alt="..." /></div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="p-5">
+                            <h2 class="display-4">Estudiantes</h2>
+                            <p>Nuestros estudiantes a lo largo de estos 35 años en este rubro del aprendizaje, son los mas buscados en el area de la programacion</p>
+                            <p>las empresas ven con buenos ojos los cercificados de la academia Steve jobs</p>
+                            <p>contamos con recursos innumerables para tu capasitacion</p>
+                            <a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'leerEstudiante' %}">Alumnos</a>
+                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'agregarEstudiante' %}">Agregar alumnos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock %}
